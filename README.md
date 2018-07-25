@@ -2,6 +2,11 @@
 
 mentor is a project to play around with Spring Boot structure and API's.
 
+## High level goal
+
+Have a best practice Spring Boot project with good development environment.
+Deployed on production on AWS with docker and kubernetes.
+
 ## Decisions
 
 - Use Spring Boot Starters
