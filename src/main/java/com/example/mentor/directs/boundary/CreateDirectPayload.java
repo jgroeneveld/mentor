@@ -9,7 +9,4 @@ public class CreateDirectPayload {
 
     @NotEmpty
     public String lastName;
-
-    @NotNull
-    public long managerId;
 }

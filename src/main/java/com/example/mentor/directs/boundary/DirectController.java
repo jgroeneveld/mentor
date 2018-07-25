@@ -6,10 +6,7 @@ import com.example.mentor.managers.control.ManagerRepository;
 import com.example.mentor.managers.entity.Manager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -27,14 +24,21 @@ public class DirectController {
         this.managerRepository = managerRepository;
     }
 
-    @GetMapping("/directs")
-    public Iterable<Direct> list(Pageable pageable) {
-        return directRepository.findAll(pageable);
+    @GetMapping("/managers/{managerId}/directs")
+    public Iterable<Direct> listManagerDirects(HttpServletResponse response, @PathVariable long managerId, Pageable pageable) {
+        Optional<Manager> manager = managerRepository.findById(managerId);
+
+        if (!manager.isPresent()) {
+            response.setStatus(404);
+            return null;
+        }
+
+        return directRepository.findAllByManager(manager.get());
     }
 
-    @PostMapping("/directs")
-    public Direct create(HttpServletResponse response, @Valid @RequestBody CreateDirectPayload payload) {
-        Optional<Manager> manager = managerRepository.findById(payload.managerId);
+    @PostMapping("/managers/{managerId}/directs")
+    public Direct create(HttpServletResponse response, @PathVariable long managerId, @Valid @RequestBody CreateDirectPayload payload) {
+        Optional<Manager> manager = managerRepository.findById(managerId);
 
         if (!manager.isPresent()) {
             response.setStatus(404);
