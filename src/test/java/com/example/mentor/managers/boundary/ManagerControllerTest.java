@@ -41,7 +41,7 @@ public class ManagerControllerTest {
 
     @Test
     public void listReturnsManagers() {
-        Manager manager = repository.save(new Manager("hans", "muller"));
+        repository.save(new Manager("hans", "muller"));
 
         Iterable<Manager> result = controller.list(PAGEABLE);
 
