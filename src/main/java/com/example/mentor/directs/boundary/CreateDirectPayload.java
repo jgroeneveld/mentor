@@ -1,7 +1,6 @@
 package com.example.mentor.directs.boundary;
 
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 public class CreateDirectPayload {
     @NotEmpty
