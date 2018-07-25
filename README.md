@@ -26,3 +26,10 @@ Pagination is done with Pageable (`?page=0`)
 
 ### Directs
 - `GET /directs` Returns a paginated list of all directs.
+
+## Getting started
+
+```
+mvn install
+mvn spring-boot:run
+```
