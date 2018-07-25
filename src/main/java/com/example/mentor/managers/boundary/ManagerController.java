@@ -4,11 +4,10 @@ import com.example.mentor.managers.control.ManagerRepository;
 import com.example.mentor.managers.entity.Manager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 import java.util.Optional;
 
 @RestController
@@ -36,5 +35,13 @@ public class ManagerController {
 
         response.setStatus(404);
         return null;
+    }
+
+
+    @PostMapping("/managers")
+    public Manager create(@Valid @RequestBody CreateManagerPayload payload) {
+        Manager manager = new Manager(payload.firstName, payload.lastName);
+
+        return managerRepository.save(manager);
     }
 }
