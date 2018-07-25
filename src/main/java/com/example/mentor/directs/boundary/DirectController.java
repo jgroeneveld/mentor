@@ -28,7 +28,7 @@ public class DirectController {
     }
 
     @GetMapping("/directs")
-    public Iterable<Direct> index(Pageable pageable) {
+    public Iterable<Direct> list(Pageable pageable) {
         return directRepository.findAll(pageable);
     }
 

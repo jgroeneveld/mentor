@@ -21,7 +21,7 @@ public class ManagerController {
     }
 
     @GetMapping("/managers")
-    public Iterable<Manager> index(Pageable pageable) {
+    public Iterable<Manager> list(Pageable pageable) {
         return managerRepository.findAll(pageable);
     }
 
