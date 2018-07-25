@@ -1,6 +1,8 @@
 package com.example.mentor.directs.entity;
 
-        import javax.persistence.*;
+import com.example.mentor.managers.entity.Manager;
+
+import javax.persistence.*;
 
 @Entity
 @Table(name = "DIRECTS")
@@ -13,6 +15,15 @@ public class Direct {
     private String firstName;
     private String lastName;
 
+    @OneToOne
+    private Manager manager;
+
+    public Direct(String firstName, String lastName, Manager manager) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.manager = manager;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -21,4 +32,7 @@ public class Direct {
         return lastName;
     }
 
+    public Manager getManager() {
+        return manager;
+    }
 }
