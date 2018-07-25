@@ -18,10 +18,17 @@ public class Direct {
     @OneToOne
     private Manager manager;
 
+    public Direct() {
+    }
+
     public Direct(String firstName, String lastName, Manager manager) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.manager = manager;
+    }
+
+    public long getId() {
+        return id;
     }
 
     public String getFirstName() {
