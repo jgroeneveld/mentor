@@ -8,7 +8,7 @@ mentor is a project to play around with Spring Boot structure and API's.
 - Use `h2` Database as development database
 - Use `flyway` for migrations (add `scripts/create_migration` to create migration files with timestamps)
 - Use `spring-boot-devtools` to have things like accessing the h2 console at `:8080/h2-console`
-- Code is structured with ECB (Entity-Control-Boundary). 
+- Code is structured with ECB (Entity-Control-Boundary).
 
 ## API's
 
