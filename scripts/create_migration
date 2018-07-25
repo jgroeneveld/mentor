@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -e
+
+timestamp() {
+    date +"%Y%m%d%H%M%S"
+}
+
+filename="src/main/resources/db/migration/$(timestamp)_$@.sql"
+
+touch $filename
+echo "created $filename"
+open $filename
