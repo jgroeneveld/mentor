@@ -29,14 +29,13 @@ public class ManagerController {
     public Manager get(HttpServletResponse response, @PathVariable long id) {
         Optional<Manager> manager = managerRepository.findById(id);
 
-        if (manager.isPresent()) {
-            return manager.get();
+        if (!manager.isPresent()) {
+            response.setStatus(404);
+            return null;
         }
 
-        response.setStatus(404);
-        return null;
+        return manager.get();
     }
-
 
     @PostMapping("/managers")
     public Manager create(@Valid @RequestBody CreateManagerPayload payload) {
