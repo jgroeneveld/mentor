@@ -5,6 +5,7 @@ import com.example.mentor.directs.entity.Direct;
 import com.example.mentor.managers.control.ManagerRepository;
 import com.example.mentor.managers.entity.Manager;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
@@ -25,7 +26,7 @@ public class DirectController {
     }
 
     @GetMapping("/managers/{managerId}/directs")
-    public Iterable<Direct> listManagerDirects(HttpServletResponse response, @PathVariable long managerId, Pageable pageable) {
+    public Iterable<DirectListElement> listManagerDirects(HttpServletResponse response, @PathVariable long managerId, Pageable pageable) {
         Optional<Manager> manager = managerRepository.findById(managerId);
 
         if (!manager.isPresent()) {
@@ -33,7 +34,9 @@ public class DirectController {
             return null;
         }
 
-        return directRepository.findAllByManager(manager.get());
+        Page<Direct> page = directRepository.findAllByManager(manager.get(), pageable);
+
+        return page.map(DirectListElement::of);
     }
 
     @PostMapping("/managers/{managerId}/directs")
