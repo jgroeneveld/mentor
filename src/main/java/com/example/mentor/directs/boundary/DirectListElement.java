@@ -10,6 +10,7 @@ public class DirectListElement {
     public static DirectListElement of(Direct direct) {
         DirectListElement element = new DirectListElement();
 
+        element.id = direct.getId();
         element.firstName = direct.getFirstName();
         element.lastName = direct.getLastName();
 

@@ -25,6 +25,25 @@ public class DirectController {
         this.managerRepository = managerRepository;
     }
 
+    @GetMapping("/managers/{managerId}/directs/{id}")
+    public Direct listManagerDirects(HttpServletResponse response, @PathVariable long managerId, @PathVariable long id) {
+        Optional<Manager> manager = managerRepository.findById(managerId);
+
+        if (!manager.isPresent()) {
+            response.setStatus(404);
+            return null;
+        }
+
+        Optional<Direct> direct = directRepository.findByIdAndManager(id, manager.get());
+
+        if (!direct.isPresent()) {
+            response.setStatus(404);
+            return null;
+        }
+
+        return direct.get();
+    }
+
     @GetMapping("/managers/{managerId}/directs")
     public Iterable<DirectListElement> listManagerDirects(HttpServletResponse response, @PathVariable long managerId, Pageable pageable) {
         Optional<Manager> manager = managerRepository.findById(managerId);
