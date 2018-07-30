@@ -27,6 +27,7 @@ Pagination is done with Pageable (`?page=0`)
 ### Directs
 - `GET /managers/{managerId}/directs` Returns a paginated list of all directs belonging to the manager.
 - `POST /managers/{managerId}/directs` Creates a new direct belonging to the manager (JSON Payload)
+- `GET /managers/{managerId}/directs/{id}` Returns a single direct.
 
 ## Getting started
 
