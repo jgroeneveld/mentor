@@ -1,9 +1,9 @@
-package com.example.mentor.directs.boundary;
+package de.jgroeneveld.mentor.directs.boundary;
 
-import com.example.mentor.directs.control.DirectRepository;
-import com.example.mentor.directs.entity.Direct;
-import com.example.mentor.managers.control.ManagerRepository;
-import com.example.mentor.managers.entity.Manager;
+import de.jgroeneveld.mentor.directs.control.DirectRepository;
+import de.jgroeneveld.mentor.directs.entity.Direct;
+import de.jgroeneveld.mentor.managers.control.ManagerRepository;
+import de.jgroeneveld.mentor.managers.entity.Manager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

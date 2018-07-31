@@ -1,4 +1,4 @@
-package com.example.mentor.managers.boundary;
+package de.jgroeneveld.mentor.managers.boundary;
 
 import javax.validation.constraints.NotBlank;
 

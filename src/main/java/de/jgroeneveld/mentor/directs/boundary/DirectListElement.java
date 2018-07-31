@@ -1,6 +1,6 @@
-package com.example.mentor.directs.boundary;
+package de.jgroeneveld.mentor.directs.boundary;
 
-import com.example.mentor.directs.entity.Direct;
+import de.jgroeneveld.mentor.directs.entity.Direct;
 
 public class DirectListElement {
     private long id;

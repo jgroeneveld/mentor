@@ -1,7 +1,7 @@
-package com.example.mentor.directs.control;
+package de.jgroeneveld.mentor.directs.control;
 
-import com.example.mentor.directs.entity.Direct;
-import com.example.mentor.managers.entity.Manager;
+import de.jgroeneveld.mentor.directs.entity.Direct;
+import de.jgroeneveld.mentor.managers.entity.Manager;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;

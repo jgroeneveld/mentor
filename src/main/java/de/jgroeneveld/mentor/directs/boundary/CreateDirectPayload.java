@@ -1,4 +1,4 @@
-package com.example.mentor.directs.boundary;
+package de.jgroeneveld.mentor.directs.boundary;
 
 import javax.validation.constraints.NotEmpty;
 

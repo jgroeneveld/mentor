@@ -1,30 +1,28 @@
-package com.example.mentor.directs.entity;
-
-import com.example.mentor.managers.entity.Manager;
+package de.jgroeneveld.mentor.managers.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity
-@Table(name = "DIRECTS")
-public class Direct {
+@Table(name = "MANAGERS")
+public class Manager {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @NotBlank
     private String firstName;
+
+    @NotBlank
     private String lastName;
 
-    @OneToOne
-    private Manager manager;
-
-    public Direct() {
+    public Manager() {
     }
 
-    public Direct(String firstName, String lastName, Manager manager) {
+    public Manager(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
-        this.manager = manager;
     }
 
     public long getId() {
@@ -37,9 +35,5 @@ public class Direct {
 
     public String getLastName() {
         return lastName;
-    }
-
-    public Manager getManager() {
-        return manager;
     }
 }

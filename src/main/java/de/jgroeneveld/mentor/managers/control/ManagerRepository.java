@@ -1,6 +1,6 @@
-package com.example.mentor.managers.control;
+package de.jgroeneveld.mentor.managers.control;
 
-import com.example.mentor.managers.entity.Manager;
+import de.jgroeneveld.mentor.managers.entity.Manager;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface ManagerRepository extends PagingAndSortingRepository<Manager, Long> {

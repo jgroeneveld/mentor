@@ -1,7 +1,7 @@
-package com.example.mentor.managers.boundary;
+package de.jgroeneveld.mentor.managers.boundary;
 
-import com.example.mentor.managers.control.ManagerRepository;
-import com.example.mentor.managers.entity.Manager;
+import de.jgroeneveld.mentor.managers.control.ManagerRepository;
+import de.jgroeneveld.mentor.managers.entity.Manager;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
