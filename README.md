@@ -14,6 +14,13 @@ Deployed on production on AWS with docker and kubernetes.
 - Use `flyway` for migrations
 - Use `spring-boot-devtools` to have things like accessing the h2 console at `:8080/h2-console`
 - Code is structured with ECB (Entity-Control-Boundary).
+- https://dius.github.io/java-faker/ is used to generate seed data. See `Seeding` for more.
+
+## Seeding
+
+- To have a good starting point for development, the database is seeded when starting in development mode.
+- Seeding is controlled with the profile "seed" which is included in "development".
+- Seeder is done in `de.jgroeneveld.mentor.seed.Seeder`
 
 ## API's
 
