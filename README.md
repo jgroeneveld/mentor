@@ -15,6 +15,7 @@ Deployed on production on AWS with docker and kubernetes.
 - Use `spring-boot-devtools` to have things like accessing the h2 console at `:8080/h2-console`
 - Code is structured with ECB (Entity-Control-Boundary).
 - https://dius.github.io/java-faker/ is used to generate seed data. See `Seeding` for more.
+- For API Documentation API Rest Docs is used and the docs can be found under `target/generated-docs/` (after `mvn install`).
 
 ## Seeding
 

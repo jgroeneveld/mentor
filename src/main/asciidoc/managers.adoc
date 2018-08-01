@@ -1,4 +1,6 @@
 = /managers
+:toc: left
+:sectnums:
 {project-version}
 :doctype: book
 
