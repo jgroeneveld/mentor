@@ -25,6 +25,8 @@ Deployed on production on AWS with docker and kubernetes.
 
 ## API's
 
+For detailed API documentation run `mvn install && open target/generated-docs/`
+
 Pagination is done with Pageable (`?page=0`)
 
 ### Managers
