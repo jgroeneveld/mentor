@@ -26,7 +26,7 @@ public class DirectController {
     }
 
     @GetMapping("/managers/{managerId}/directs/{id}")
-    public Direct listManagerDirects(HttpServletResponse response, @PathVariable long managerId, @PathVariable long id) {
+    public Direct getManagerDirect(HttpServletResponse response, @PathVariable long managerId, @PathVariable long id) {
         Optional<Manager> manager = managerRepository.findById(managerId);
 
         if (!manager.isPresent()) {
