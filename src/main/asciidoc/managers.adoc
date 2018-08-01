@@ -6,8 +6,8 @@
 
 == GET /managers
 
-operation::manager-controller-test/list-managers[snippets='http-request,request-fields,http-response,request-fields']
+operation::manager-controller-test/list-managers[snippets='http-request,http-response,response-fields']
 
 == GET /managers/{id}
 
-operation::manager-controller-test/get-manager[snippets='http-request,request-fields,http-response,response-fields']
+operation::manager-controller-test/get-manager[snippets='http-request,http-response,response-fields']

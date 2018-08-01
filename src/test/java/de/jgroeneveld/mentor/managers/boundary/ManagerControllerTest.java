@@ -12,6 +12,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.document;
 import static org.springframework.restdocs.payload.PayloadDocumentation.fieldWithPath;
+import static org.springframework.restdocs.payload.PayloadDocumentation.relaxedResponseFields;
 import static org.springframework.restdocs.payload.PayloadDocumentation.responseFields;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -53,7 +54,17 @@ public class ManagerControllerTest extends MockMvcTest {
                 .andExpect(jsonPath("content[0].id").value(manager.getId()))
                 .andExpect(jsonPath("content[0].firstName").value("Robert"))
                 .andExpect(jsonPath("content[0].lastName").value("Baratheon"))
-                .andDo(document("{class-name}/{method-name}")
-                );
+                .andDo(document("{class-name}/{method-name}",
+                        relaxedResponseFields(
+                                fieldWithPath("content").description("List of Managers"),
+                                fieldWithPath("numberOfElements").description("How many elements on this page"),
+                                fieldWithPath("last").description("Is this the last page"),
+                                fieldWithPath("first").description("Is this the first page"),
+                                fieldWithPath("totalElements").description("Number of elements"),
+                                fieldWithPath("totalPages").description("Number of pages"),
+                                fieldWithPath("size").description("Max. Page Size"),
+                                fieldWithPath("number").description("Page Number")
+                        )
+                ));
     }
 }
