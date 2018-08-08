@@ -2,6 +2,8 @@
 
 mentor is a project to play around with Spring Boot structure and API's.
 
+Heroku: https://javamentor.herokuapp.com/managers
+
 ## High level goal
 
 Have a best practice Spring Boot project with good development environment.
